@@ -13,6 +13,7 @@ ktor = "3.2.3"
 coroutines = "1.10.2"
 appcompat = "1.7.1"
 material = "1.13.0"
+navigation3 = "1.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +46,9 @@ android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", ve
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+androidx-navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "navigation3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -56,7 +56,7 @@ fun HomeRoute(
 fun HomeScreen(
     state: HomeState,
     onRefresh: () -> Unit,
-    onLoadMore: () -> Unit
+    onLoadMore: () -> Unit,
 ) {
     Scaffold { innerPadding ->
         Column(

@@ -25,7 +25,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "CTvBox"
 include(":app")
-include(":core:core")
-include(":feature:home")
 
+include(":core:core")
 include(":core:navgation")
+
+include(":feature:home:impl")

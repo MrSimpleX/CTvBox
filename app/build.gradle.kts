@@ -13,8 +13,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":feature:home"))
+    implementation(project(":core:core"))
+    implementation(project(":feature:home:impl"))
 
     implementation(libs.io.insert.koin.android)
 }

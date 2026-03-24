@@ -7,7 +7,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation(project(":core:core"))
 
     implementation(libs.io.insert.koin.android)
     implementation(libs.io.insert.koin.androidx.compose)
