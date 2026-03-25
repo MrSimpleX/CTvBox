@@ -15,7 +15,7 @@ android {
 
 dependencies {
     implementation(projects.core.core)
-    implementation(projects.core.navgation)
+    implementation(projects.core.navigation)
 
     implementation(projects.feature.home.impl)
 

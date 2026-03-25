@@ -1,18 +1,12 @@
 plugins {
-    id("ctvbox.android.library.compose")
+    alias(libs.plugins.ctvbox.android.feature.api)
 }
 
 android {
-    namespace = "com.simplez.ctvbox.feature.home"
+    namespace = "com.simplez.ctvbox.feature.home.api"
 }
 
 dependencies {
-    implementation(project(":core:core"))
-
-    implementation(libs.io.insert.koin.android)
-    implementation(libs.io.insert.koin.androidx.compose)
-    implementation(libs.io.ktor.client.core)
-    implementation(libs.kotlinx.serialization.json)
-
-    testImplementation(libs.kotlinx.coroutines.test)
+    api(projects.core.navigation)
 }
+

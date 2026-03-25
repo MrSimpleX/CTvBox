@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.simplez.ctvbox.feature.home.presentation.HomeRoute
 import com.simplez.ctvbox.ui.theme.CTvBoxTheme
-import com.simplez.navgation.rememberNavigationState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

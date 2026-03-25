@@ -33,15 +33,23 @@ gradlePlugin {
     plugins {
         register("androidApplicationCompose") {
             id = "ctvbox.android.application.compose"
-            implementationClass = "com.simplez.ctvbox.buildlogic.AndroidApplicationComposeConventionPlugin"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidLibrary") {
             id = "ctvbox.android.library"
-            implementationClass = "com.simplez.ctvbox.buildlogic.AndroidLibraryConventionPlugin"
+            implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryCompose") {
             id = "ctvbox.android.library.compose"
-            implementationClass = "com.simplez.ctvbox.buildlogic.AndroidLibraryComposeConventionPlugin"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidFeatureImpl") {
+            id = libs.plugins.ctvbox.android.feature.impl.get().pluginId
+            implementationClass = "AndroidFeatureImplConventionPlugin"
+        }
+        register("androidFeatureApi") {
+            id = libs.plugins.ctvbox.android.feature.api.get().pluginId
+            implementationClass = "AndroidFeatureApiConventionPlugin"
         }
     }
 }
