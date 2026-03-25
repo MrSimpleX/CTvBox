@@ -1,5 +1,6 @@
 plugins {
     id("ctvbox.android.application.compose")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -13,8 +14,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:core"))
-    implementation(project(":feature:home:impl"))
+    implementation(projects.core.core)
+    implementation(projects.core.navgation)
 
+    implementation(projects.feature.home.impl)
+
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.io.insert.koin.android)
 }

@@ -5,12 +5,12 @@ import com.simplez.ctvbox.di.appModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class CTvBoxApplication : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            androidContext(this@CTvBoxApplication)
+            androidContext(this@App)
             modules(appModules)
         }
     }

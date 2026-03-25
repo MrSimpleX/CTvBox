@@ -23,6 +23,7 @@ dependencyResolutionManagement {
     }
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "CTvBox"
 include(":app")
 
@@ -30,3 +31,4 @@ include(":core:core")
 include(":core:navgation")
 
 include(":feature:home:impl")
+include(":feature:home:api")
