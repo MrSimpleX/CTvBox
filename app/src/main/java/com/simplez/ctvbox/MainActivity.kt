@@ -5,8 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.simplez.api.HomeNavKey
 import com.simplez.ctvbox.feature.home.presentation.HomeRoute
-import com.simplez.ctvbox.ui.theme.CTvBoxTheme
+import com.simplez.ctvbox.navigation.NAV_ITEMS
+import com.simplez.designui.theme.CTvBoxTheme
+import com.simplez.navigation.rememberNavigationState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,11 +19,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-          //  val navigationState = rememberNavigationState(ForYouNavKey, TOP_LEVEL_NAV_ITEMS.keys)
+            val navigationState = rememberNavigationState(HomeNavKey, NAV_ITEMS.keys)
 
             CTvBoxTheme {
-                CtvBoxApp()
-                HomeRoute()
+                CtvBoxApp(navigationState)
             }
         }
     }

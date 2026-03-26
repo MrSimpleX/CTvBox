@@ -30,7 +30,8 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun HomeRoute(
-    viewModel: HomeViewModel = koinViewModel()
+    viewModel: HomeViewModel = koinViewModel(),
+    detail: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -48,7 +49,8 @@ fun HomeRoute(
     HomeScreen(
         state = uiState,
         onRefresh = { viewModel.processIntent(HomeIntent.Refresh) },
-        onLoadMore = { viewModel.processIntent(HomeIntent.LoadNextPage) }
+        onLoadMore = { viewModel.processIntent(HomeIntent.LoadNextPage) },
+        onDetail = detail
     )
 }
 
@@ -57,6 +59,7 @@ fun HomeScreen(
     state: HomeState,
     onRefresh: () -> Unit,
     onLoadMore: () -> Unit,
+    onDetail: () -> Unit,
 ) {
     Scaffold { innerPadding ->
         Column(
@@ -103,6 +106,17 @@ fun HomeScreen(
                         key = { it.id }
                     ) { todo ->
                         TodoItemRow(todo = todo)
+                    }
+
+                    item {
+                        Button(
+                            onClick = onDetail,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .testTag("home_load_more")
+                        ) {
+                            Text(text = "Detail")
+                        }
                     }
 
                     item {
@@ -177,7 +191,8 @@ private fun HomeScreenPreview() {
                 )
             ),
             onRefresh = {},
-            onLoadMore = {}
+            onLoadMore = {},
+            onDetail = {}
         )
     }
 }

@@ -36,11 +36,11 @@ gradlePlugin {
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "ctvbox.android.library"
+            id = libs.plugins.ctvbox.android.library.asProvider().get().pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id = "ctvbox.android.library.compose"
+            id = libs.plugins.ctvbox.android.library.compose.get().pluginId
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidFeatureImpl") {

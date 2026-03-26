@@ -1,5 +1,6 @@
 plugins {
     id("ctvbox.android.library")
+    id("ctvbox.android.library.compose")
 }
 
 android {

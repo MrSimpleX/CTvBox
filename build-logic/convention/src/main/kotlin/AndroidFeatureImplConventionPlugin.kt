@@ -1,7 +1,11 @@
+import com.android.build.api.dsl.LibraryExtension
+import com.simplez.ctvbox.buildlogic.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.internal.Actions.with
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
 /**
  * @Title: CTvBox
@@ -15,7 +19,23 @@ class AndroidFeatureImplConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "ctvbox.android.library")
-            apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
+
+            extensions.configure<LibraryExtension> {
+                testOptions.animationsDisabled = true
+            }
+
+            dependencies {
+                "implementation"(project(":core:designui"))
+                "implementation"(project(":core:core"))
+
+                "implementation"(libs.findLibrary("androidx.lifecycle.runtime.compose").get())
+                "implementation"(libs.findLibrary("androidx.lifecycle.viewModel.compose").get())
+                "implementation"(libs.findLibrary("androidx.navigation3.runtime").get())
+
+                "androidTestImplementation"(
+                    libs.findLibrary("androidx.lifecycle.runtime.testing").get(),
+                )
+            }
         }
     }
 }

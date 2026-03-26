@@ -95,3 +95,6 @@ internal fun Project.addCommonComposeDebugDependencies(libs: VersionCatalog) {
     addDebugImplementation(libs, "androidx-compose-ui-tooling")
     addDebugImplementation(libs, "androidx-compose-ui-test-manifest")
 }
+
+val Project.libs
+    get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")

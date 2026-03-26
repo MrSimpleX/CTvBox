@@ -1,5 +1,6 @@
 plugins {
-    id("ctvbox.android.library.compose")
+    alias(libs.plugins.ctvbox.android.feature.impl)
+    alias(libs.plugins.ctvbox.android.library.compose)
 }
 
 android {
@@ -7,7 +8,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:core"))
+    implementation(projects.core.core)
+    implementation(projects.feature.home.api)
 
     implementation(libs.io.insert.koin.android)
     implementation(libs.io.insert.koin.androidx.compose)

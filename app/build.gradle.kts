@@ -15,10 +15,13 @@ android {
 
 dependencies {
     implementation(projects.core.core)
+    implementation(projects.core.designui)
     implementation(projects.core.navigation)
 
     implementation(projects.feature.home.impl)
+    implementation(projects.feature.home.api)
 
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.navigation3.ui)
     implementation(libs.io.insert.koin.android)
 }

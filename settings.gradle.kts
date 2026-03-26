@@ -29,6 +29,7 @@ include(":app")
 
 include(":core:core")
 include(":core:navigation")
+include(":core:designui")
 
 include(":feature:home:impl")
 include(":feature:home:api")

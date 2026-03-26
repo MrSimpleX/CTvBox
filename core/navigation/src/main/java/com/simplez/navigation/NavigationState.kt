@@ -20,6 +20,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.runtime.toMutableStateList
 import androidx.navigation3.runtime.NavBackStack
@@ -40,11 +41,13 @@ fun rememberNavigationState(
     val topLevelStack = rememberNavBackStack(startKey)
     val subStacks = topLevelKeys.associateWith { key -> rememberNavBackStack(key) }
 
-    return NavigationState(
-        startKey = startKey,
-        topLevelStack = topLevelStack,
-        subStacks = subStacks,
-    )
+    return remember(startKey, topLevelKeys) {
+        NavigationState(
+            startKey = startKey,
+            topLevelStack = topLevelStack,
+            subStacks = subStacks,
+        )
+    }
 }
 
 /**
