@@ -1,12 +1,12 @@
-package com.simplez.ctvbox
+package com.simplez.ctvbox.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
 import com.simplez.ctvbox.feature.home.navigation.homeEntry
@@ -24,7 +24,13 @@ import com.simplez.navigation.toEntries
  */
 @Composable
 fun CtvBoxApp(navigationState: NavigationState) {
-    Scaffold() {
+    Scaffold(
+        bottomBar = {
+            NavigationBar() {
+
+            }
+        }
+    ) {
         Column(modifier = Modifier.padding(it)) {
 
             val navigator = remember { Navigator(navigationState) }
@@ -33,11 +39,8 @@ fun CtvBoxApp(navigationState: NavigationState) {
                 homeEntry(navigator)
             }
 
-            //val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
-
             NavDisplay(
                 entries = navigationState.toEntries(entryProvider),
-                //sceneStrategy = listDetailStrategy,
                 onBack = { navigator.goBack() },
             )
         }

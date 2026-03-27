@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.simplez.api.HomeNavKey
-import com.simplez.ctvbox.feature.home.presentation.HomeRoute
 import com.simplez.ctvbox.navigation.NAV_ITEMS
+import com.simplez.ctvbox.ui.CtvBoxApp
 import com.simplez.designui.theme.CTvBoxTheme
 import com.simplez.navigation.rememberNavigationState
 
