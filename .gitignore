@@ -17,3 +17,4 @@ local.properties
 /build-logic/.kotlin/
 /.kotlin/
 /.idea/
+/.gradle-user-home/

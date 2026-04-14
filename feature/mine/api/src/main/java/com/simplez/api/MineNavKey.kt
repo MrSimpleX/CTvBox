@@ -12,5 +12,5 @@ import kotlinx.serialization.Serializable
  * @version V1.0
  */
 @Serializable
-class MineNavKey : NavKey {
+object MineNavKey : NavKey {
 }

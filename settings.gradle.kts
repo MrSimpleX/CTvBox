@@ -33,4 +33,7 @@ include(":core:designui")
 
 include(":feature:home:impl")
 include(":feature:home:api")
+include(":feature:mine:impl")
 include(":feature:mine:api")
+include(":feature:find:impl")
+include(":feature:find:api")
