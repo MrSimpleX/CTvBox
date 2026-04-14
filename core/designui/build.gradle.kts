@@ -9,6 +9,7 @@ android {
 
 dependencies {
     api(libs.androidx.compose.material3)
+    api(libs.androidx.compose.material.iconsExtended)
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.io.insert.koin.core)
