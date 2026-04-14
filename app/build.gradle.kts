@@ -20,6 +20,10 @@ dependencies {
 
     implementation(projects.feature.home.impl)
     implementation(projects.feature.home.api)
+    implementation(projects.feature.mine.impl)
+    implementation(projects.feature.mine.api)
+    implementation(projects.feature.find.impl)
+    implementation(projects.feature.find.api)
 
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.navigation3.ui)
